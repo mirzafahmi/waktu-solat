@@ -2,7 +2,7 @@ let waktuSolat = {
   //fetch waktu solat from api
   fetchWaktuSolat: function (cityName) {
     fetch(
-      `https://api.aladhan.com/v1/timingsByCity?city=${cityName}&country=malaysia`
+      `https://api.aladhan.com/v1/timingsByCity?city=${cityName}&country=malaysia&method=11`
     )
       .then((response) => response.json())
       .then((data) => this.displayWaktuSolat(data));
