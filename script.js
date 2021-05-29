@@ -41,6 +41,8 @@ let waktuSolat = {
     document.querySelector(".asar").innerText = `${Asar}`;
     document.querySelector(".maghrib").innerText = `${Maghrib}`;
     document.querySelector(".isyak").innerText = `${Isyak}`;
+    document.body.style.backgroundImage =
+      "url('https://source.unsplash.com/1600x900/?mosque')";
   },
   search: function () {
     this.fetchWaktuSolat(document.querySelector(".search-bar").value);
@@ -54,13 +56,17 @@ let waktuSolat = {
     document.querySelector("input").value = "";
   },
   currentTime: function (){
-    let d = new Date;
-    let h = d.getHours < 10 ? `"0"+${d.getHours()}` : `${d.getHours()}`;
-    let m = d.getMinutes < 10 ? `"0"+${d.getMinutes()}`: `${d.getMinutes()}`
-    return `${h}:${m}`
+    let d = new Date();
+    let h = d.getHours();
+    let m = d.getMinutes();
+    return (m < 10? `${h}:0${m}`: h < 10? `0${h}:${m}`: `${h}:${m}`);
   },
   currentTimeLive: function (){
-    document.querySelector(".clock").innerText = setInterval(this.currentTime, 1000);
+    document.querySelector(".clock").innerText = this.currentTime();
+  },
+  changeBackground: function () {
+    document.body.style.backgroundImage =
+      "url('https://source.unsplash.com/1600x900/?mosque')";
   }
 };
 
@@ -69,6 +75,8 @@ document.querySelector(".search button").addEventListener("click", () => {
   waktuSolat.displayCity();
   waktuSolat.search();
   waktuSolat.clearInput();
+  waktuSolat.currentTimeLive();
+  waktuSolat.changeBackground();
 });
 
 //search by hitting enter key
@@ -77,8 +85,7 @@ document.querySelector(".search-bar").addEventListener("keyup", (event) => {
     waktuSolat.displayCity();
     waktuSolat.search();
     waktuSolat.clearInput();
+    waktuSolat.currentTimeLive();
+    waktuSolat.changeBackground();
   }
 });
-
-
-console.log(waktuSolat.currentTime())

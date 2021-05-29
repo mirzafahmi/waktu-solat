@@ -22,16 +22,34 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-image: url(https://source.unsplash.com/1600x900/?mosque);
 }
 
 .container {
   width: 100%;
   max-width: 350px;
+  padding: 2em;
+  margin: 1em;
+  border-radius: 30px;
+  color: black;
+  background: rgba(245, 222, 179, 0.85);
+  background-position: center center;
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .container img {
   height: 75px;
   width: 100%;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
 }
 
 .search {
