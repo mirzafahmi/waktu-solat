@@ -47,11 +47,6 @@ body {
   width: 100%;
 }
 
-.card {
-  width: 100%;
-  max-width: 420px;
-}
-
 .search {
   display: -webkit-box;
   display: -ms-flexbox;
